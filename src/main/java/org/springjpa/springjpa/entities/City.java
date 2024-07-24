@@ -18,15 +18,25 @@ public class City {
     @Column(name = "city_name")
     private String cityName;
 
-    @Column(name = "city_code", columnDefinition = "varchar(3) NOT NULL DEFAULT 'NA'")
+    @Column(name = "city_code", columnDefinition = "character varying(3) not null default 'NA'")
     private String cityCode;
 
-    @Transient // will ignore this field when updating table columns
-    private String beanId;
+    //    @Transient // will ignore this field when updating table columns
+//    private String beanI
+//    d;
 
+    @Column(name = "country_id")
+    private int countryId;
     @ManyToOne
-    @JoinColumn(name="country_id")
+    @JoinColumn(name="country_id", insertable = false, updatable = false)
     private Country country;
+    public int getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(int countryId) {
+        this.countryId = countryId;
+    }
 
     public Long getId() {
         return id;
