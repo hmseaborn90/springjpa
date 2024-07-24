@@ -18,7 +18,8 @@ public class City {
     @Column(name = "city_name")
     private String cityName;
 
-    @Column(name = "city_code", columnDefinition = "character varying(3) not null default 'NA'")
+//TODO   @Column(name = "city_code", columnDefinition = "character varying(3) not null default 'NA'") Causing error that did not break code debug later
+    @Column(name = "city_code")
     private String cityCode;
 
     //    @Transient // will ignore this field when updating table columns
