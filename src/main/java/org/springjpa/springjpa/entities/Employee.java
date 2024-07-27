@@ -10,8 +10,8 @@ import java.util.Date;
 public class Employee {
 
     @Id
-    @Column(name="employee_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="employee_id")
     private int id;
     private String employeename;
     private String department;
@@ -95,4 +95,6 @@ public class Employee {
     public void setLeftjob(boolean leftjob) {
         this.leftjob = leftjob;
     }
+
+
 }

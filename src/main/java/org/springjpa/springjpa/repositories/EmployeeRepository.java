@@ -10,4 +10,10 @@ import java.util.List;
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
     Employee findById(int id);
     List<Employee> findByEmployeename(String employeename);
+
+    List<Employee>findByDepartmentAndAgeLessThanEqual(String department, int age);
+    List<Employee>findByDepartmentAndAgeGreaterThanEqual(String department, int age);
+
+    List<Employee>findByEmployeenameStartingWith(String employeename);
+
 }
